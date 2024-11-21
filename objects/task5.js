@@ -14,4 +14,3 @@ const users = [
 for (const {name, email, age} of users) {
     console.log(`${name} is ${age} years old. To contact, write to ${email}`);
 };
-

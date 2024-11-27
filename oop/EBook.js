@@ -21,13 +21,13 @@ export class EBook extends Book {
         return this._fileFormat;
     }
 
-    set fileFormat(newFormat) {
+    set fileFormat(fileFormat) {
         const allowedFormats = ['PDF', 'EPUB', 'TXT', 'MOBI'];
 
-        if (!allowedFormats.includes(newFormat)) {
+        if (!allowedFormats.includes(fileFormatFormat)) {
             throw new Error(`File format must be one of the following: ${allowedFormats.join(', ')}`);
         }
-        this._fileFormat = newFormat;
+        this._fileFormat = fileFormatFormat;
     }
 
     printInfo() {

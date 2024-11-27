@@ -57,3 +57,9 @@ console.log('The oldest book is: ');
 oldestBook.printInfo();
 
 
+console.log('\n---Create ebook---');
+
+const ebook3 = EBook.createEBook(book2, 'PDF');
+ebook3.printInfo();
+
+

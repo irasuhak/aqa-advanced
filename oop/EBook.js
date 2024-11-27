@@ -7,6 +7,9 @@
 
 3. 3. Геттери та сеттери: Додайте геттери та сеттери для всіх властивостей класу Book та EBook. 
 В сеттерах необхідно додати валідацію для переданих значень. Використовуйте їх для зміни та отримання значень властивостей.
+
+5. Створіть статичний метод для EBook який буде приймати як аргументи екземпляр класу Book 
+і формат файлу як рядок та повертати екземпляр класу EBook.
 */
 
 import { Book } from "./Book.js";
@@ -24,13 +27,21 @@ export class EBook extends Book {
     set fileFormat(fileFormat) {
         const allowedFormats = ['PDF', 'EPUB', 'TXT', 'MOBI'];
 
-        if (!allowedFormats.includes(fileFormatFormat)) {
+        if (!allowedFormats.includes(fileFormat)) {
             throw new Error(`File format must be one of the following: ${allowedFormats.join(', ')}`);
         }
-        this._fileFormat = fileFormatFormat;
+        this._fileFormat = fileFormat;
     }
 
     printInfo() {
         console.log(`${this.title} by ${this.author}, published in ${this.year}. Available file format is ${this.fileFormat}.`);
+    }
+
+    static createEBook (book, fileFormat) {
+        if (typeof fileFormat !== 'string' || fileFormat.trim() === '') {
+            throw new Error('File must be a non-empty string');
+        }
+
+        return new EBook(book.title, book.author, book.year, fileFormat)
     }
 }

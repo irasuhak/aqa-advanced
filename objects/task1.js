@@ -11,9 +11,9 @@
 
 const student = {};
 
-student.firstName = 'James'; 
+student.firstName = 'James';
 student.lastName = 'Potter';
-student.age = 16; 
-student.courses = ['Transfiguration', 'Potions', 'Defence afainst the dark arts' ];
+student.age = 16;
+student.courses = ['Transfiguration', 'Potions', 'Defence afainst the dark arts'];
 
 console.log(student);

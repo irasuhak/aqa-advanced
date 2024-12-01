@@ -12,56 +12,56 @@
 */
 
 export class Book {
-    constructor(title, author, year) {
-        this._title = title;
-        this._author = author;
-        this._year = year;
-    }
+	constructor(title, author, year) {
+		this._title = title;
+		this._author = author;
+		this._year = year;
+	}
 
-    get title() {
-        return this._title;
-    }
+	get title() {
+		return this._title;
+	}
 
-    set title(title) {
-        if (typeof title !== 'string' || title.trim() === '') {
-            throw new Error('Title must be a non-empty string.');
-        }
-        this._title = title;
-    }
+	set title(title) {
+		if (typeof title !== 'string' || title.trim() === '') {
+			throw new Error('Title must be a non-empty string.');
+		}
+		this._title = title;
+	}
 
-    get author() {
-        return this._author;
-    }
+	get author() {
+		return this._author;
+	}
 
-    set author(author) {
-        if (typeof author !== 'string' || author.trim() === '') {
-            throw new Error('Author must be a non-empty string.');
-        }
-        this._author = author;
-    }
+	set author(author) {
+		if (typeof author !== 'string' || author.trim() === '') {
+			throw new Error('Author must be a non-empty string.');
+		}
+		this._author = author;
+	}
 
-    get year() {
-        return this._year;
-    }
+	get year() {
+		return this._year;
+	}
 
-    set year(year) {
-        if (!Number.isInteger(year) || year <= 0) {
-            throw new Error(' Year must be a postive integer.')
-        }
-        this._year = year;
-    }    
+	set year(year) {
+		if (!Number.isInteger(year) || year <= 0) {
+			throw new Error(' Year must be a postive integer.');
+		}
+		this._year = year;
+	}
 
-    printInfo() {
-        console.log(`${this.title} by ${this.author}, published in ${this.year}.`);
-    }
-    
-    static findOldestBook(books) {
-        return books.reduce((oldest, current) => {
-            if (current.year < oldest.year) {
-                return current;
-            } else {
-                return oldest;
-            }
-        });
-    }
+	printInfo() {
+		console.log(`${this.title} by ${this.author}, published in ${this.year}.`);
+	}
+
+	static findOldestBook(books) {
+		return books.reduce((oldest, current) => {
+			if (current.year < oldest.year) {
+				return current;
+			} else {
+				return oldest;
+			}
+		});
+	}
 }

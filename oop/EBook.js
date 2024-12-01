@@ -12,36 +12,38 @@
 і формат файлу як рядок та повертати екземпляр класу EBook.
 */
 
-import { Book } from "./Book.js";
+import { Book } from './Book.js';
 
 export class EBook extends Book {
-    constructor (title, author, year, fileFormat) {
-        super(title, author, year);
-        this._fileFormat = fileFormat;
-    }
+	constructor(title, author, year, fileFormat) {
+		super(title, author, year);
+		this._fileFormat = fileFormat;
+	}
 
-    get fileFormat() {
-        return this._fileFormat;
-    }
+	get fileFormat() {
+		return this._fileFormat;
+	}
 
-    set fileFormat(fileFormat) {
-        const allowedFormats = ['PDF', 'EPUB', 'TXT', 'MOBI'];
+	set fileFormat(fileFormat) {
+		const allowedFormats = ['PDF', 'EPUB', 'TXT', 'MOBI'];
 
-        if (!allowedFormats.includes(fileFormat)) {
-            throw new Error(`File format must be one of the following: ${allowedFormats.join(', ')}`);
-        }
-        this._fileFormat = fileFormat;
-    }
+		if (!allowedFormats.includes(fileFormat)) {
+			throw new Error(`File format must be one of the following: ${allowedFormats.join(', ')}`);
+		}
+		this._fileFormat = fileFormat;
+	}
 
-    printInfo() {
-        console.log(`${this.title} by ${this.author}, published in ${this.year}. Available file format is ${this.fileFormat}.`);
-    }
+	printInfo() {
+		console.log(
+			`${this.title} by ${this.author}, published in ${this.year}. Available file format is ${this.fileFormat}.`,
+		);
+	}
 
-    static createEBook (book, fileFormat) {
-        if (typeof fileFormat !== 'string' || fileFormat.trim() === '') {
-            throw new Error('File must be a non-empty string');
-        }
+	static createEBook(book, fileFormat) {
+		if (typeof fileFormat !== 'string' || fileFormat.trim() === '') {
+			throw new Error('File must be a non-empty string');
+		}
 
-        return new EBook(book.title, book.author, book.year, fileFormat)
-    }
+		return new EBook(book.title, book.author, book.year, fileFormat);
+	}
 }

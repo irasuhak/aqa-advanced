@@ -10,9 +10,9 @@
 */
 
 const person = {
-    firstName: 'Harry',
-    lastName: 'Potter',
-    age: 11
+	firstName: 'Harry',
+	lastName: 'Potter',
+	age: 11,
 };
 
 person.email = 'hedwiga@gmail.com';

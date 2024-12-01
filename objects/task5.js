@@ -6,11 +6,11 @@
 */
 
 const users = [
-    {name: 'Sara', age: 25, email: 'someemail@gmail.com'},
-    {name: 'Mike', age: 30, email: 'othermail@gmail.com'},
-    {name: 'Nick', age: 32, email: 'anotheremail@gmail.com'}
+	{ name: 'Sara', age: 25, email: 'someemail@gmail.com' },
+	{ name: 'Mike', age: 30, email: 'othermail@gmail.com' },
+	{ name: 'Nick', age: 32, email: 'anotheremail@gmail.com' },
 ];
 
-for (const {name, email, age} of users) {
-    console.log(`${name} is ${age} years old. To contact, write to ${email}`);
-};
+for (const { name, email, age } of users) {
+	console.log(`${name} is ${age} years old. To contact, write to ${email}`);
+}

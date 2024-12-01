@@ -14,35 +14,35 @@ b. або хоча б один з аргументів не є числом, в�
 */
 
 function divide(numerator, denominator) {
-    if (denominator === 0) {
-        throw new Error('Denominator cannot be zero');
-    }
-    if (typeof numerator !== 'number' || typeof denominator !== 'number') {
-        throw new Error('Both arguments must be numbers.');
-    }
-    return numerator / denominator;
+	if (denominator === 0) {
+		throw new Error('Denominator cannot be zero');
+	}
+	if (typeof numerator !== 'number' || typeof denominator !== 'number') {
+		throw new Error('Both arguments must be numbers.');
+	}
+	return numerator / denominator;
 }
 
 try {
-    console.log(divide(25, 5));
+	console.log(divide(25, 5));
 } catch (error) {
-    console.error(error.message);
+	console.error(error.message);
 } finally {
-    console.log('Робота завершена');
+	console.log('Робота завершена');
 }
 
 try {
-    console.log(divide(25, 0));
+	console.log(divide(25, 0));
 } catch (error) {
-    console.error(error.message);
+	console.error(error.message);
 } finally {
-    console.log('Робота завершена');
+	console.log('Робота завершена');
 }
 
 try {
-    console.log(divide(25, 'abc'));
+	console.log(divide(25, 'abc'));
 } catch (error) {
-    console.error(error.message);
+	console.error(error.message);
 } finally {
-    console.log('Робота завершена');
+	console.log('Робота завершена');
 }

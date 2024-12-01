@@ -9,16 +9,15 @@
 
 // function declaration
 function squareRectangle(width, height) {
-    return width * height;
+	return width * height;
 }
 
 console.log(squareRectangle(5, 10));
 
-
 // function expression
-const squareRectangle1 = function(width, height) {
-    return width * height;
-}
+const squareRectangle1 = function (width, height) {
+	return width * height;
+};
 
 console.log(squareRectangle1(5, 10));
 

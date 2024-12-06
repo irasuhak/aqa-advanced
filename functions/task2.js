@@ -8,7 +8,7 @@
 */
 
 function isAdult(age) {
-    return age >= 18;
+	return age >= 18;
 }
 
 console.log(`Is a person an adult? - ${isAdult(25)}`);

@@ -11,7 +11,6 @@ let circleArea = Math.PI * Math.pow(radius, 2);
 
 console.log(circleArea.toFixed(2));
 
-
 /*
 Завдання 4.2
 1. Створіть змінну length і присвойте їй числове значення довжини прямокутника.
@@ -25,7 +24,6 @@ let width = 5;
 let areaRectangle = length * width;
 
 console.log(areaRectangle);
-
 
 /*
 Завдання 4.3

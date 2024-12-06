@@ -4,10 +4,9 @@
 */
 
 function saySomething(text, delay) {
-    setTimeout(() => {
-        console.log(text);
-    }, delay);    
+	setTimeout(() => {
+		console.log(text);
+	}, delay);
 }
 
 saySomething("What's up?", 1000);
-

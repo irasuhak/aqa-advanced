@@ -9,11 +9,11 @@
 */
 
 const book = {
-    title: 'The Catcher in the Rye',
-    author: 'Jerome D. Salinger',
-    year: 1951
+	title: 'The Catcher in the Rye',
+	author: 'Jerome D. Salinger',
+	year: 1951,
 };
 
-const {title, author} = book;
+const { title, author } = book;
 
 console.log(`${title} by ${author}`);

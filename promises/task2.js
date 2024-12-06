@@ -12,55 +12,54 @@
 */
 
 function getTodo() {
-    return fetch('https://jsonplaceholder.typicode.com/todos/1')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Http error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(todo => {
-            console.log('Todo: ', todo);
-            return todo;
-        })
-        .catch(error => {
-            console.error('Error', error);
-            throw error;
-        });
-    }
-
+	return fetch('https://jsonplaceholder.typicode.com/todos/1')
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`Http error! Status: ${response.status}`);
+			}
+			return response.json();
+		})
+		.then((todo) => {
+			console.log('Todo: ', todo);
+			return todo;
+		})
+		.catch((error) => {
+			console.error('Error', error);
+			throw error;
+		});
+}
 
 function getUser() {
-    return fetch('https://jsonplaceholder.typicode.com/users/1')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Http error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(user => {
-        console.log('User: ', user);
-        return user;
-    })
-    .catch(error => {
-        console.error('Error', error);
-        throw error;
-    });
+	return fetch('https://jsonplaceholder.typicode.com/users/1')
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`Http error! Status: ${response.status}`);
+			}
+			return response.json();
+		})
+		.then((user) => {
+			console.log('User: ', user);
+			return user;
+		})
+		.catch((error) => {
+			console.error('Error', error);
+			throw error;
+		});
 }
 
 Promise.all([getTodo(), getUser()])
-    .then(results => {
-        const [todo, user] = results;
-        console.log('Results from Promise.all:', {todo, user});
-    })
-    .catch(error => {
-        console.error('Error in Promise.all:', error);
-    });
+	.then((results) => {
+		const [todo, user] = results;
+		console.log('Results from Promise.all:', { todo, user });
+	})
+	.catch((error) => {
+		console.error('Error in Promise.all:', error);
+	});
 
 Promise.race([getTodo(), getUser()])
-    .then(firstResolved => {
-        console.log('First resolved from Promise.race: ', firstResolved)
-    })
-    .catch(error => {
-        console.error('Error in Promise.race: ', error)
-    });
+	.then((firstResolved) => {
+		console.log('First resolved from Promise.race: ', firstResolved);
+	})
+	.catch((error) => {
+		console.error('Error in Promise.race: ', error);
+	});

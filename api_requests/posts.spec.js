@@ -4,17 +4,13 @@
 обов'язково має бути перевірка респонсу - response status, data на коректність згідно з документацією по АПІ
  */
 
-const axios = require('axios').default;
+const axiosClient = require('./axiosClient');
 
 describe('API tests for JSONPlaceholder', () => {
 	const BASE_URL = 'https://jsonplaceholder.typicode.com/';
 
 	test('Get all posts', async () => {
-		const response = await axios.get(`${BASE_URL}/posts`, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
+		const response = await axiosClient.get('/posts');
 
 		console.log(response.data);
 
@@ -32,11 +28,7 @@ describe('API tests for JSONPlaceholder', () => {
 
 	test('Get a post by id', async () => {
 		const postId = 5;
-		const response = await axios.get(`${BASE_URL}/posts/${postId}`, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
+		const response = await axiosClient.get(`/posts/${postId}`)
 
 		console.log(response.data);
 
@@ -49,12 +41,8 @@ describe('API tests for JSONPlaceholder', () => {
 
 	test('Get all comments for a specific post', async () => {
 		const postId = 1;
-		const response = await axios.get(`${BASE_URL}/posts/${postId}/comments`, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
-
+		const response = await axiosClient.get(`/posts/${postId}/comments`);
+	
 		console.log(response.data);
 
 		expect(response.status).toEqual(200);
@@ -72,10 +60,7 @@ describe('API tests for JSONPlaceholder', () => {
 
 	test('Get comments by postId', async () => {
 		const postId = 3;
-		const response = await axios.get(`${BASE_URL}/comments`, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
+		const response = await axiosClient.get(`/comments`, {
 			params: {
 				postId,
 			},
@@ -103,12 +88,8 @@ describe('API tests for JSONPlaceholder', () => {
 			userId: 1,
 		};
 
-		const response = await axios.post(`${BASE_URL}/posts`, newPost, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
-
+		const response = await axiosClient.post(`/posts`, newPost);
+		
 		console.log(response.data);
 
 		expect(response.status).toEqual(201);

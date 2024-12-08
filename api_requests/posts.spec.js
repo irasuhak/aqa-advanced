@@ -28,7 +28,7 @@ describe('API tests for JSONPlaceholder', () => {
 
 	test('Get a post by id', async () => {
 		const postId = 5;
-		const response = await axiosClient.get(`/posts/${postId}`)
+		const response = await axiosClient.get(`/posts/${postId}`);
 
 		console.log(response.data);
 
@@ -42,7 +42,7 @@ describe('API tests for JSONPlaceholder', () => {
 	test('Get all comments for a specific post', async () => {
 		const postId = 1;
 		const response = await axiosClient.get(`/posts/${postId}/comments`);
-	
+
 		console.log(response.data);
 
 		expect(response.status).toEqual(200);
@@ -89,7 +89,7 @@ describe('API tests for JSONPlaceholder', () => {
 		};
 
 		const response = await axiosClient.post(`/posts`, newPost);
-		
+
 		console.log(response.data);
 
 		expect(response.status).toEqual(201);
